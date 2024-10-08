@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: tomcat
-        image: tomcat:latest
+        image: nginx:latest
         ports:
-        - containerPort: 8080  # Tomcat listens on this port
+        - containerPort: 80  # Tomcat listens on this port
 ---
 apiVersion: v1
 kind: Service
@@ -30,4 +30,4 @@ spec:
     app: tomcat
   ports:
   - port: 80         # Port exposed by the service
-    targetPort: 8080  # Port on which the container is listening
+    targetPort: 80  # Port on which the container is listening
